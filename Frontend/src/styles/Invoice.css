@@ -1,0 +1,249 @@
+.invoice-table-container {
+  padding: 20px;
+}
+
+.invoice-table-title {
+  text-align: center;
+  font-size: 26px;
+  color: #495057;
+  margin-bottom: 20px;
+}
+
+.invoice-table-row {
+  transition: background-color 0.3s ease;
+}
+
+.invoice-table-header-row {
+  color: white;
+  font-weight: bold;
+}
+
+.invoice-table-header-cell {
+  padding: 10px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.invoice-table-cell {
+  padding: 10px;
+}
+
+.invoice-action-buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.invoice-action-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  transition: color 0.3s ease;
+}
+
+.invoice-action-icon {
+  font-size: 18px;
+  color: #495057;
+}
+
+.invoice-search-box {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.invoice-search-input {
+  padding: 8px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.invoice-search-input:focus{
+  border-color: #495057;
+  outline: none;
+}
+.invoice-filter {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  justify-content: space-between; /* Pushes the radio buttons to the left and PDF button to the right */
+}
+
+.invoice-filter label {
+  margin-right: 15px;
+  font-size: 14px;
+  color: #495057;
+  cursor: pointer;
+}
+
+.invoice-filter input[type="radio"] {
+  margin-right: 8px;
+  accent-color: #495057;
+  cursor: pointer;
+}
+
+.invoice-filter input[type="radio"]:checked + label {
+  font-weight: bold;
+  color: #495057;
+}
+
+.invoice-filter .radio-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.invoice-download-btn {
+  margin-left: auto; /* Pushes the PDF button to the right */
+}
+
+.invoice-download-btn button {
+  padding: 8px 12px;
+  background-color: #525b44;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.invoice-details-container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  font-family: "Arial", sans-serif;
+}
+
+.invoice-details-title {
+  text-align: center;
+  font-size: 28px;
+  color: #495057;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.invoice-details-info {
+  margin-bottom: 30px;
+}
+
+.invoice-details-text {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #495057;
+}
+
+.invoice-details-strong {
+  font-weight: bold;
+}
+
+.invoice-items-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.invoice-items-table th,
+.invoice-items-table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+  color: #495057;
+}
+
+.invoice-items-header {
+  background-color: #f1f1f1;
+  color: #495057;
+  font-weight: bold;
+}
+
+.invoice-items-cell {
+  color: #495057;
+}
+
+.invoice-items-row:hover {
+  background-color: #f9f9f9;
+}
+
+.invoice-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px solid #ddd;
+  text-align: center;
+  font-size: 14px;
+  color: #495057;
+}
+
+.invoice-footer p {
+  margin: 5px 0;
+}
+
+.invoice-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.invoice-modal-content {
+  background-color: white;
+  padding: 20px;
+  margin: 50px auto;
+  max-width: 600px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.invoice-total-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.invoice-total-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #495057;
+}
+
+.close-modal-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  color: #495057;
+  cursor: pointer;
+  padding: 0;
+}
+
+.close-modal-button:hover {
+  color: #ff0000;
+}
+
+.sc-eUlrpB.hZZlND {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.hudJpJ {
+  background-color: #525b44 !important;
+  color: #f1f1f1;
+}
+.date-range-filter input{
+  color: #495057;
+  margin-left: 5px;
+  padding: 4px 5px;
+}

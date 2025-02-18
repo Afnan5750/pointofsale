@@ -1,0 +1,292 @@
+.product-page-container {
+  padding: 20px;
+}
+
+.product-page-title {
+  font-size: 26px;
+  color: #495057;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.product-table-container {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.react-dataTable {
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.react-pagination {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.react-dataTable .rdt_TableRow {
+  transition: background-color 0.3s;
+}
+
+.react-dataTable .rdt_TableRow:hover {
+  background-color: #f1f1f1;
+}
+
+.products-search-box {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.products-search-input {
+  padding: 8px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.products-search-input:focus{
+  border-color: #495057;
+  outline: none;
+}
+
+.add-product-button,
+.add-product {
+  padding: 8px 12px;
+  background-color: #525b44;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-product-button:hover,
+.add-product:hover {
+  background-color: #4a533f;
+}
+
+.custom-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.custom-modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.modal-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #495057;
+}
+
+.custom-modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #495057;
+}
+
+.custom-modal-content input:focus {
+  border-color: #495057; 
+  outline: none;
+}
+
+.custom-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  color: #495057;
+  cursor: pointer;
+  padding: 0;
+}
+
+.custom-close-button:hover {
+  color: #e74c3c;
+}
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.action-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 18px;
+  color: #495057;
+  transition: background-color 0.3s ease;
+}
+.products-filter-box {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.products-filter-box .dropdown-container {
+  flex: 1; /* Allows the dropdown to take available space */
+}
+
+.products-filter-box .dropdown-container label {
+  margin-right: 10px;
+  color: #495057;
+}
+
+.products-filter-box .dropdown-container select {
+  padding: 5px;
+  font-size: 14px;
+  color: #495057;
+  width: 200px; /* Set width as needed */
+}
+
+.products-filter-box .dropdown-container select::-webkit-scrollbar {
+  display: none;
+}
+
+.products-filter-box .checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Aligns checkbox to the right */
+}
+
+.products-filter-box .checkbox-container input[type="checkbox"] {
+  margin-left: 10px;
+}
+
+.products-filter-box .checkbox-container label {
+  margin-left: 5px;
+  color: #495057;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.highlighted {
+  font-weight: bold;
+}
+/* Category input field */
+#category {
+  padding: 10px;
+  font-size: 1rem;
+  width: 100%;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Suggestion list styling */
+.suggestion-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 5px 0 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-height: 200px;
+  overflow-y: auto; /* Enable vertical scrolling */
+  position: absolute;
+  background-color: white;
+  width: 90%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: none; /* Hidden by default */
+}
+
+/* Hide the scrollbar for Webkit browsers (Chrome, Safari, etc.) */
+.suggestion-list::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar */
+}
+
+/* Show suggestion list when visible class is added */
+.suggestion-list.visible {
+  display: block;
+}
+
+/* Individual suggestion item */
+.suggestion-list li {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: left;
+}
+
+/* Hover effect for suggestion items */
+.suggestion-list li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Optionally, style for when no suggestions are available */
+.suggestion-list.no-suggestions {
+  display: block;
+  padding: 10px;
+  color: #888;
+  text-align: center;
+  font-size: 0.9rem;
+} 
+
+.wrap-text {
+  word-wrap: break-word;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+.floating-label-container {
+  position: relative;
+  margin-bottom: 7px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 1rem;
+  padding-top: 1.5rem;  
+  padding-bottom: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.floating-label {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  transition: all 0.2s ease;
+  color: #555;
+  pointer-events: none;
+  font-size: 1rem;
+}
+
+.form-input:focus + .floating-label,
+.form-input:not(:placeholder-shown) + .floating-label {
+  top: 0;
+  left: 0;
+  font-size: 0.85rem;
+  color: #495057; 
+}

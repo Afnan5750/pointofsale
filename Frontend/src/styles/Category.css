@@ -1,0 +1,145 @@
+.category-page {
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+}
+
+.category-page h1 {
+  text-align: center;
+  font-size: 26px;
+  color: #495057;
+  margin-bottom: 20px;
+}
+
+.category-table-container {
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.category-table-header {
+  background-color: #525b44;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.category-table-row {
+  transition: background-color 0.3s ease;
+}
+
+.category-table-row:hover {
+  background-color: #f9f9f9;
+}
+
+.category-table-cell {
+  padding: 12px;
+  text-align: left;
+  color: #495057;
+}
+
+.category-action-buttons {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.category-action-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  transition: color 0.3s ease;
+}
+
+.category-action-btn .category-action-icon {
+  font-size: 18px;
+}
+
+
+.category-progress-loader {
+  text-align: center;
+  padding: 20px;
+}
+
+.category-pagination {
+  margin-top: 20px;
+}
+
+.category-search-box {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.category-search-input {
+  padding: 8px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.category-highlight-row:hover {
+  background-color: rgba(82, 91, 68, 0.2);
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+}
+
+/* Category Details */
+.modal-detail {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #495057;
+}
+
+.modal-detail strong {
+  color: #495057;
+}
+
+/* Product List */
+.modal-product-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.modal-product-item {
+  font-size: 16px;
+  color: #495057;
+  margin-bottom: 5px;
+  list-style: none;
+}
+.category-title {
+  text-align: center;
+}
+
+.category-action {
+  display: flex;
+  gap: 10px;
+}

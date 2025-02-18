@@ -1,0 +1,87 @@
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #495057;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #495057;
+}
+
+.form-group input,
+.role-select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff; 
+}
+
+.form-group input:focus,
+.role-select:focus {
+  border-color: #495057;
+  outline: none;
+}
+
+/* Updated Login Button */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #7b61ff; /* Updated to vibrant blue-purple */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Button Hover Effect */
+.login-btn:hover {
+  background-color: #624bd8; /* Slightly darker for hover effect */
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 40px;  
+}
+
+/* Eye Icon for Password Visibility */
+.password-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px; 
+  color: #495057;
+}

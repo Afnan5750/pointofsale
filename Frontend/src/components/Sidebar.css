@@ -1,0 +1,119 @@
+/* Sidebar Styles */
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background-color: #ffffff;
+  color: #495057;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: width 0.3s ease-in-out;
+  overflow-y: auto;
+  border-right: 1px solid #e0e0e0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 15px;
+}
+
+.logo-img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain; /* Ensures the image scales properly */
+  border-radius: 10px; /* Keeps the rounded look */
+}
+
+.sidebar-title h2 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: bold;
+  color: #495057;
+}
+
+.sidebar-title p {
+  font-size: 12px;
+  color: #777;
+  margin: 0;
+}
+
+/* Sidebar List */
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.sidebar-item {
+  margin-bottom: 10px;
+}
+
+/* Sidebar Links */
+.sidebar-link {
+  color: #495057;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar-link:hover {
+  background-color: #eee; /* Light gray on hover */
+  color: #495057; /* Keep text color dark */
+}
+
+.sidebar-link.active {
+  background-color: #7b61ff; /* Purple for active link */
+  color: white;
+  font-weight: bold;
+}
+
+
+/* Icons */
+.sidebar-link svg {
+  margin-right: 12px;
+  font-size: 1.2rem;
+}
+
+/* Sidebar Footer (Logout Button) */
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 15px;
+}
+
+/* Ensure logout button looks like a link */
+.logout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ff4b5c;
+  color: white;
+  padding: 12px;
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  border: none; /* Remove default button border */
+  cursor: pointer; /* Ensure cursor changes to pointer */
+  width: 100%; /* Make it full-width like other sidebar items */
+}
+
+/* Hover effect */
+.logout-btn:hover {
+  background: #d43f51;
+  color: white;
+}

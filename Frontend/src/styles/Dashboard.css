@@ -1,0 +1,92 @@
+.main-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100vh;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 0 1 calc(33.333% - 20px);
+  color: #fff;
+  font-size: 1.2rem;
+  min-width: 200px;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.card-value {
+  font-size: 1.3rem;
+  margin-top: 10px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.card-sales {
+  background-color: #3498db;
+  border-left: 5px solid #1d6fa5;
+}
+
+.card-monthly-sales {
+  background-color: #e67e22;
+  border-left: 5px solid #b95414;
+}
+
+.card-today-sales {
+  background-color: #9b59b6;
+  border-left: 5px solid #6d3a84;
+}
+
+.card-invoices {
+  background-color: #2ecc71;
+  border-left: 5px solid #1e8e4e;
+}
+
+.card-today-invoices {
+  background-color: #f39c12;
+  border-left: 5px solid #c2700d;
+}
+
+.card-products {
+  background-color: #1abc9c;
+  border-left: 5px solid #117a6c;
+}
+
+.card-monthly-invoices {
+  background-color: #e74c3c;
+  border-left: 5px solid #b0372a;
+}
+
+.card.total-categories {
+  background-color: #f1c40f;
+  border-left: 5px solid #f39c12;
+}
+
+.card-icon {
+  margin-bottom: 15px;
+  color: white;
+  font-size: 3rem;
+  align-self: flex-start;
+}
