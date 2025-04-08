@@ -34,8 +34,11 @@ const Login = () => {
       const data = await response.json();
 
       if (response.ok) {
+        localStorage.setItem("userRole", role); // Save role
+        localStorage.setItem("token", data.token); // Save token if provided by API
         // Handle successful login
-        console.log("User data:", data); // Log or store user data as needed
+        console.log(`User Role: ${role}`); // Log the role in console
+        console.log("User Data:", data); // Log user data
         setError(""); // Clear any previous errors on successful login
 
         // Redirect to dashboard after successful login

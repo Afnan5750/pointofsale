@@ -26,8 +26,8 @@
 }
 
 .logo-img {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   object-fit: contain; /* Ensures the image scales properly */
   border-radius: 10px; /* Keeps the rounded look */
 }

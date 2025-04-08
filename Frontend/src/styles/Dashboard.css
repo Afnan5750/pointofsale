@@ -1,3 +1,4 @@
+/* Main Content Layout */
 .main-content {
   padding: 20px;
   display: flex;
@@ -6,44 +7,57 @@
   height: 100vh;
 }
 
+/* Card Container */
 .cards {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
 }
 
+/* Card Styling */
 .card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 20px;
+  padding: 15px; /* Reduced padding */
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   flex: 0 1 calc(33.333% - 20px);
   color: #fff;
   font-size: 1.2rem;
   min-width: 200px;
+  min-height: 120px; /* Reduced height */
+  height: 140px; /* Fixed height */
   transition: box-shadow 0.3s ease;
 }
 
+/* Card Hover Effect */
 .card:hover {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Card Titles */
 .card-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 10px;
+  font-size: 1.3rem; /* Adjusted size */
+  font-weight: 600; 
 }
 
+/* Card Values */
 .card-value {
-  font-size: 1.3rem;
-  margin-top: 10px;
+  font-size: 1.2rem;
   font-weight: 500;
   opacity: 0.9;
 }
 
+/* Card Icon */
+.card-icon { 
+  color: white;
+  font-size: 2.5rem; /* Adjusted icon size */
+  align-self: flex-start;
+}
+
+/* Specific Card Colors */
 .card-sales {
   background-color: #3498db;
   border-left: 5px solid #1d6fa5;
@@ -83,10 +97,8 @@
   background-color: #f1c40f;
   border-left: 5px solid #f39c12;
 }
-
-.card-icon {
-  margin-bottom: 15px;
-  color: white;
-  font-size: 3rem;
-  align-self: flex-start;
+/* Profit Card Styling */
+.card-profit {
+  background-color: #16a085;
+  border-left: 5px solid #117864;
 }

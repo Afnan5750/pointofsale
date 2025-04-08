@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Dashboard.css";
-import { FaDollarSign, FaBox, FaFileInvoice, FaList } from "react-icons/fa";
+import {
+  FaDollarSign,
+  FaBox,
+  FaFileInvoice,
+  FaList,
+  FaChartLine,
+} from "react-icons/fa";
 import axios from "axios";
 
 const Dashboard = () => {
@@ -152,29 +158,45 @@ const Dashboard = () => {
   return (
     <div className="main-content">
       <div className="cards">
+        {/* Profit Card */}
+        <div className="card card-profit">
+          <div className="card-icon">
+            <FaChartLine />
+          </div>
+          <h3 className="card-title">Total Profit</h3>
+          <p className="card-value">Rs. 7654345</p>
+        </div>
+
+        {/* Sales Cards */}
         <div className="card card-sales">
-          <FaDollarSign className="fa-2x card-icon" />
+          <div className="card-icon">
+            <FaDollarSign />
+          </div>
           <h3 className="card-title">Total Sales</h3>
           <p className="card-value">Rs. {totalSales}</p>
-          {/* <p className="card-value">Rs. {formatAmount(totalSales)}</p> if amount in K  */}
         </div>
 
         <div className="card card-monthly-sales">
-          <FaDollarSign className="fa-2x card-icon" />
+          <div className="card-icon">
+            <FaDollarSign />
+          </div>
           <h3 className="card-title">Monthly Sales</h3>
           <p className="card-value">Rs. {monthlySales}</p>
         </div>
 
         <div className="card card-today-sales">
-          <FaDollarSign className="fa-2x card-icon" />
+          <div className="card-icon">
+            <FaDollarSign />
+          </div>
           <h3 className="card-title">Today's Sales</h3>
           <p className="card-value">Rs. {todaySales}</p>
         </div>
-      </div>
 
-      <div className="cards">
+        {/* Invoice Cards */}
         <div className="card card-invoices">
-          <FaFileInvoice className="fa-2x card-icon" />
+          <div className="card-icon">
+            <FaFileInvoice />
+          </div>
           <h3 className="card-title">Total Invoices</h3>
           <p className="card-value">
             {totalInvoices.totalInvoicesCount} Invoices
@@ -182,25 +204,34 @@ const Dashboard = () => {
         </div>
 
         <div className="card card-monthly-invoices">
-          <FaFileInvoice className="fa-2x card-icon" />
+          <div className="card-icon">
+            <FaFileInvoice />
+          </div>
           <h3 className="card-title">Monthly Invoices</h3>
           <p className="card-value">{monthlyInvoices} Invoices</p>
         </div>
 
         <div className="card card-today-invoices">
-          <FaFileInvoice className="fa-2x card-icon" />
+          <div className="card-icon">
+            <FaFileInvoice />
+          </div>
           <h3 className="card-title">Today's Invoices</h3>
           <p className="card-value">{todayInvoices} Invoices</p>
         </div>
 
+        {/* Additional Cards */}
         <div className="card total-categories">
-          <FaList className="fa-2x card-icon" />
+          <div className="card-icon">
+            <FaList />
+          </div>
           <h3 className="card-title">Total Categories</h3>
           <p className="card-value">{totalCategories} Categories</p>
         </div>
 
         <div className="card card-products">
-          <FaBox className="fa-2x card-icon" />
+          <div className="card-icon">
+            <FaBox />
+          </div>
           <h3 className="card-title">Total Products</h3>
           <p className="card-value">{totalProducts} Products</p>
         </div>

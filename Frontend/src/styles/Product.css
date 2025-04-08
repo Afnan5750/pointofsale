@@ -69,20 +69,6 @@
 .add-product:hover {
   background-color: #4a533f;
 }
-
-.custom-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
 .custom-modal-content {
   background-color: #fff;
   padding: 20px;
@@ -92,7 +78,27 @@
   text-align: center;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
+  
+  /* Make modal scrollable */
+  max-height: 95vh; /* Adjust based on preference */
+  overflow-y: auto;
 }
+
+/* Ensure the modal itself remains centered */
+.custom-modal-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden; /* Prevent body scrolling */
+}
+
 
 .modal-title {
   font-size: 22px;

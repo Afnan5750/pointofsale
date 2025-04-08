@@ -18,11 +18,14 @@ const Product = () => {
     company: "",
     category: "",
     price: "",
+    actualPrice: "",
+    image: null,
   });
   const [isEditMode, setIsEditMode] = useState(false);
   const [editingProductId, setEditingProductId] = useState(null);
   const [categories, setCategories] = useState([]);
   const [filteredCategories, setFilteredCategories] = useState([]);
+  const [imagePreview, setImagePreview] = useState(null);
 
   // Fetch categories from the backend
   useEffect(() => {
@@ -207,17 +210,33 @@ const Product = () => {
   };
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setNewProduct((prevProduct) => ({
-      ...prevProduct,
-      [name]: value,
-    }));
+    const { name, value, type, files } = e.target;
 
-    // Clear the error message when the user starts typing
-    if (errorMessage) {
-      setErrorMessage(""); // Clear error message
+    if (type === "file" && files.length > 0) {
+      const selectedFile = files[0];
+
+      setNewProduct((prevProduct) => ({
+        ...prevProduct,
+        image: selectedFile, // Store file object
+      }));
+    } else {
+      setNewProduct((prevProduct) => ({
+        ...prevProduct,
+        [name]: value,
+      }));
     }
   };
+
+  // ✅ Log when `newProduct.image` changes
+  useEffect(() => {
+    if (newProduct.image) {
+      if (newProduct.image instanceof File) {
+        console.log("✅ Image is added:", newProduct.image.name);
+      } else {
+        console.log("✅ Existing image from DB:", newProduct.image);
+      }
+    }
+  }, [newProduct.image]); // Runs every time `image` changes
 
   const handleAddOrUpdateProduct = async () => {
     // Check if the product name already exists, excluding the current product in edit mode
@@ -233,22 +252,40 @@ const Product = () => {
     }
 
     try {
+      // Create FormData to handle text fields & image upload
+      const formData = new FormData();
+      formData.append("name", newProduct.name);
+      formData.append("company", newProduct.company);
+      formData.append("category", newProduct.category);
+      formData.append("quantity", newProduct.quantity);
+      formData.append("price", newProduct.price);
+      formData.append("actualPrice", newProduct.actualPrice);
+
+      if (newProduct.image) {
+        formData.append("image", newProduct.image); // Append image file
+      }
+
+      let response;
       if (isEditMode) {
-        const response = await axios.put(
+        response = await axios.put(
           `http://localhost:5000/api/update-product/${editingProductId}`,
-          newProduct
+          formData,
+          { headers: { "Content-Type": "multipart/form-data" } }
         );
+
         setProducts((prevProducts) =>
           prevProducts.map((product) =>
             product._id === editingProductId ? response.data : product
           )
         );
       } else {
-        const response = await axios.post(
+        response = await axios.post(
           "http://localhost:5000/api/add-product",
-          [newProduct]
+          formData,
+          { headers: { "Content-Type": "multipart/form-data" } }
         );
-        setProducts((prevProducts) => [...prevProducts, ...response.data]);
+
+        setProducts((prevProducts) => [...prevProducts, response.data]);
       }
 
       setModalVisible(false);
@@ -257,7 +294,7 @@ const Product = () => {
     } catch (error) {
       console.error(
         isEditMode ? "Error updating product:" : "Error adding product:",
-        error
+        error.response?.data || error
       );
       setErrorMessage("An error occurred while processing your request.");
     }
@@ -272,8 +309,25 @@ const Product = () => {
       quantity: product.quantity,
       category: product.category,
       price: product.price,
+      actualPrice: product.actualPrice,
+      image: product.image || null, // Ensure it’s not undefined
     });
     setModalVisible(true);
+  };
+
+  // Function to reset the modal form
+  const resetForm = () => {
+    setNewProduct({
+      name: "",
+      company: "",
+      quantity: "",
+      category: "",
+      price: "",
+      actualPrice: "",
+      image: null,
+    });
+    setIsEditMode(false);
+    setEditingProductId(null);
   };
 
   const handleDeleteProduct = async (productId) => {
@@ -294,19 +348,6 @@ const Product = () => {
         console.error("Error deleting product:", error);
       }
     }
-  };
-
-  // Function to reset the modal form
-  const resetForm = () => {
-    setNewProduct({
-      name: "",
-      company: "",
-      quantity: "",
-      category: "",
-      price: "",
-    });
-    setIsEditMode(false);
-    setEditingProductId(null);
   };
 
   return (
@@ -413,7 +454,6 @@ const Product = () => {
                   Product Name
                 </label>
               </div>
-
               <div className="floating-label-container">
                 <input
                   type="text"
@@ -428,7 +468,6 @@ const Product = () => {
                   Company
                 </label>
               </div>
-
               <div className="floating-label-container">
                 <input
                   type="number"
@@ -443,7 +482,6 @@ const Product = () => {
                   Quantity
                 </label>
               </div>
-
               <div className="floating-label-container">
                 <input
                   type="text"
@@ -489,7 +527,6 @@ const Product = () => {
                   </ul>
                 )}
               </div>
-
               <div className="floating-label-container">
                 <input
                   type="number"
@@ -504,6 +541,52 @@ const Product = () => {
                   Price
                 </label>
               </div>
+              <div className="floating-label-container">
+                <input
+                  type="number"
+                  name="actualPrice"
+                  id="actualPrice"
+                  placeholder=" "
+                  value={newProduct.actualPrice}
+                  onChange={handleInputChange}
+                  className="form-input"
+                />
+                <label htmlFor="actualPrice" className="floating-label">
+                  Actual Price
+                </label>
+              </div>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e) => {
+                  if (e.target.files[0]) {
+                    setNewProduct({ ...newProduct, image: e.target.files[0] });
+                  }
+                }}
+              />
+
+              {newProduct.image && (
+                <div className="image-preview">
+                  <img
+                    src={
+                      newProduct.image instanceof File
+                        ? URL.createObjectURL(newProduct.image) // Use URL for File object
+                        : newProduct.image // Use existing image URL from database
+                    }
+                    alt="Product Preview"
+                    className="preview-image"
+                    style={{
+                      width: "100px",
+                      height: "100px",
+                      marginTop: "10px",
+                      objectFit: "cover",
+                      borderRadius: "5px",
+                      border: "2px solid #495057",
+                      padding: "3px",
+                    }}
+                  />
+                </div>
+              )}
 
               <div className="modal-buttons">
                 <button

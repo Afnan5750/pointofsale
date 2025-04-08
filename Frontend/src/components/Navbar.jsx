@@ -37,14 +37,14 @@ const Navbar = () => {
       {/* Left Side: Logo */}
       <div className="navbar-left">
         <a href="/dashboard">
-          <img src={logo} alt="POS Logo" className="logo-image" />
+          {/* <img src={logo} alt="POS Logo" className="logo-image" /> */}
         </a>
       </div>
 
       {/* Right Side: Profile Icon */}
       <div className="navbar-right">
         <div className="profile-icon" onClick={toggleDropdown}>
-          <FaUserCircle size={30} color="white" />
+          <FaUserCircle size={30} color="#495057" />
         </div>
 
         {/* Dropdown Menu */}
